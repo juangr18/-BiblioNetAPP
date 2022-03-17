@@ -1,0 +1,26 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Book";
+}
+<h1 class="h2">Register book</h1>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form asp-action="Create">
+    <div>
+        <div class="mb-3">
+            <label asp-for="BookName" class="form-control" />
+            <input class="form-control" asp-for="BookName" />
+            <span asp-validation-for="BookName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Author" class="form-control" />
+            <input asp-for="Author" class="form-control" />
+            <span span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price" class="form-control" />
+            <input asp-for="Price" type="number" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

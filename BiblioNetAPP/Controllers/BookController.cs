@@ -14,11 +14,7 @@ namespace BiblioNetAPP.Controllers
         [HttpPost]
         public IActionResult Create(Book book)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(book);
-            }
-            return View();
+            return !ModelState.IsValid ? View(book) : View();
         }
     }
 }

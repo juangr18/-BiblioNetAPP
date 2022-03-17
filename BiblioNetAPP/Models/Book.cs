@@ -8,6 +8,6 @@ namespace BiblioNetAPP.Models
         [Required(ErrorMessage = "{0} is required")]
         public string BookName { get; set; }
         public string Author { get; set; }
-        public float Price { get; set; }
+        public int Price { get; set; }
     }
 }
