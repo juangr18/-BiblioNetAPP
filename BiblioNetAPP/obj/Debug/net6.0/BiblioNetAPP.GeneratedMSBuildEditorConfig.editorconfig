@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = F:\puntoNet projects\BiblioNetAPP\BiblioNetAPP
 build_property._RazorSourceGeneratorDebug = 
 
+[F:/puntoNet projects/BiblioNetAPP/BiblioNetAPP/Views/Book/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/puntoNet projects/BiblioNetAPP/BiblioNetAPP/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
