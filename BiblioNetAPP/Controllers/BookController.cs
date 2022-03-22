@@ -1,15 +1,14 @@
-﻿
-using BiblioNetAPP.Models;
-using BiblioNetAPP.Repository;
+﻿using BiblioNetAPP.Models;
+using BiblioNetAPP.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BiblioNetAPP.Controllers
 {
     public class BookController : Controller
     {
-        private readonly IReporitorieBooks repositorieBooks;
+        private readonly IRepositorieBooks repositorieBooks;
 
-        public BookController(IReporitorieBooks repositorieBooks)
+        public BookController(IRepositorieBooks repositorieBooks)
         {
             this.repositorieBooks = repositorieBooks;
         }
@@ -17,7 +16,6 @@ namespace BiblioNetAPP.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult Create(Book book)
         {
@@ -25,7 +23,6 @@ namespace BiblioNetAPP.Controllers
             {
                 return View(book);
             }
-            
             repositorieBooks.Create(book);
             return View();
         }

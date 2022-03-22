@@ -2,13 +2,13 @@
 using Dapper;
 using Microsoft.Data.SqlClient;
 
-namespace BiblioNetAPP.Repository
+namespace BiblioNetAPP.Services
 {
-    public interface IReporitorieBooks
+    public interface IRepositorieBooks
     {
         void Create(Book book);
     }
-    public class RepositorieBooks
+    public class RepositorieBooks: IRepositorieBooks
     {
         private readonly string connectionString;
 
@@ -19,9 +19,11 @@ namespace BiblioNetAPP.Repository
         public void Create(Book book)
         {
             using var connection = new SqlConnection(connectionString);
-            var id = connection.QuerySingle<int>($@"INSERT INTO Books 
-                                                  (BookName, Author, Price)
-                                                    Values(@BookName, @Author, @Price)", book);
+            var id = connection.QuerySingle<int>($@"INSERT INTO Books
+                                                (BookName, Author, Price)
+                                                 Values(@BookName, @Author, @Price); 
+                                                 SELECT SCOPE_IDENTITY();", book);
+            book.Id=id;
         }
     }
 

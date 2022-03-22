@@ -1,7 +1,10 @@
+using BiblioNetAPP.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IRepositorieBooks, RepositorieBooks>();
 
 var app = builder.Build();
 
