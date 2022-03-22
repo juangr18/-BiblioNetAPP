@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BiblioNetAPP.Validations;
+using System.ComponentModel.DataAnnotations;
 
 namespace BiblioNetAPP.Models
 {
@@ -6,8 +7,12 @@ namespace BiblioNetAPP.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "{0} is required")]
+        [FirstCapitalLetter]
         public string BookName { get; set; }
+        [Required(ErrorMessage = "{0} is required")]
+        //[FirstCapitalLetter]
         public string Author { get; set; }
-        public int Price { get; set; }
+        [Required(ErrorMessage = "{0} is required")]
+        public float Price { get; set; }
     }
 }
